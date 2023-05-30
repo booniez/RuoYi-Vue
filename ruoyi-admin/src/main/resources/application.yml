@@ -9,7 +9,7 @@ ruoyi:
   # 实例演示开关
   demoEnabled: true
   # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
-  profile: D:/ruoyi/uploadPath
+  profile: /d/docker/ccw/ruoyi/uploadPath
   # 获取ip地址开关
   addressEnabled: false
   # 验证码类型 math 数组计算 char 字符验证
@@ -70,13 +70,13 @@ spring:
   # redis 配置
   redis:
     # 地址
-    host: localhost
+    host: ${REDIS_HOST:172.29.58.35}
     # 端口，默认为6379
-    port: 6379
+    port: ${REDIS_PORT:6379}
     # 数据库索引
-    database: 0
+    database: ${REDIS_DATABASE:0}
     # 密码
-    password: 
+    password: ${REDIS_PASSWORD:}
     # 连接超时时间
     timeout: 10s
     lettuce:
